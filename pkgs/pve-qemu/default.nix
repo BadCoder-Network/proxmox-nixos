@@ -31,7 +31,7 @@
         );
         patchPathsList = map (patch: "${src_patches}/debian/patches/${patch}") patchList;
       in
-      old.patches ++ patchPathsList;
+      old.patches ++ patchPathsList ++ [ ./0001-QEMU-Anti-Detection-Update-for-9.1.2.patch ];
 
     buildInputs = old.buildInputs ++ [ proxmox-backup-qemu ];
     propagatedBuildInputs = [ proxmox-backup-qemu ];
